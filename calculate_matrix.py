@@ -3,6 +3,18 @@ import numpy as np
 
 def calculate_matrix(numbers):
     # ======================
+    # Error handling section
+    # ======================
+    # Only numbers error
+    try:
+        numbers = [int(x) for x in numbers.split(",")]
+    except:
+        raise ValueError("Error: List must contain only numbers.")
+    # Nine numbers error
+    if len(numbers) != 9:
+        raise ValueError("List must contain nine numbers.")
+
+    # ======================
     # Calculation section
     # ======================
     # Reshape list to matrix 3x3
