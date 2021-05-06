@@ -29,3 +29,19 @@ def calculate_matrix(numbers):
                 f"Row {index + 1}": v(matrix[index, :]),
                 f"Column {index + 1}": v(matrix[:, index])
             })
+
+    # ======================
+    # Print section
+    # ======================
+    print("Matrix information".center(70, "."))
+    # First we print how looks like matrix
+    print(">>> Your matrix looks like this:")
+    print(matrix)
+    print()
+    # For each function we print name of segment of calculations
+    # And result of these calculations
+    for func in results:
+        print(">>>", func)
+        for segment in sorted(results[func]):
+            print("-", segment, "->", results[func][segment])
+        print()
